@@ -1,0 +1,422 @@
+<head>
+  <title>United Charities Bazaar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="United Charities Bazaar">
+  <meta name="author" content="Arun Zechariah">
+</head>
+
+<body>
+    {{> navi}}
+    <div class="row">
+      {{> main}}
+      {{> about}}
+      {{> history}}
+      {{> volunteer}}
+    </div>
+
+    <div id="footer">
+      <div class="container">
+       {{> footer}}
+      </div>
+    </div>
+</body>
+
+
+<template name="navi">
+  <div class="navbar navbar-fixed-top navbar-inverse" id="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+          <a class="navbar-brand" href="#" style="line-height: 1.428571429; display: inline !important;"><div style="display: inline !important;"></div></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a id="nav_show_about" href="/about">About</a>
+            </li>
+            <li class="dropdown open">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">More&nbsp;<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/history">History</a>
+                </li>
+                <li>
+                  <a href="#">Events</a>
+                </li>
+                <li>
+                  <a href="#">Gallery</a>
+                </li>
+                <li class="divider">
+                </li>
+                <li class="dropdown-header">
+                  Contact Us
+                </li>
+                <li>
+                  <a href="/volunteer">Volunteer / Support</a>
+                </li>
+                <li>
+                  <a href="#">Press</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+            </div>
+          </form>
+        </div>
+        <!--/.navbar-collapse -->
+      </div>
+    </div>
+</template>
+
+<template name="main">
+  {{#if showMain}}
+    {{> jumbo}}
+    {{> highlights}}
+    <hr>
+    {{> social}}
+  {{/if}}
+</template>
+
+<template name="jumbo">
+  <div class="jumbotron">
+    <div class="container">
+      <h1>
+        United Charities Bazaar
+      </h1>
+      <p>
+        <a class="btn btn-lg btn-success" href="/about">Learn more »</a>
+      </p>
+      <i>Coming to together to promote various charities under one roof !</i>
+    </div>
+  </div>
+</template>
+
+<template name="highlights">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>
+          <i> We are ...</i>
+        </h2>
+        <p>
+          a Annual Bazaar of charities and NGOs <br />
+          coming together for a common cause.
+        </p>
+        <p>
+          <a class="btn btn-default" href="/about">View details »</a>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h2>
+          <i> History</i>
+        </h2>
+        <p>
+          For 30 years the bazaar has been the <br />
+          mainstay of charitable events in Bangalore ...
+          </p>
+          <p>
+            <a class="btn btn-default" href="/history">View details »</a>
+          </p>
+      </div>
+      <div class="col-md3 col-md4 col-md-4" style="display: block;">
+          <h2>
+            <i> Events</i>
+          </h2>
+          <p>
+            Get ready for the 2013 bazaar ! <br />
+            Details coming very soon .. stay tuned.
+          </p>
+          <p>
+            <a class="btn btn-default" href="#">View details »</a>
+          </p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="social">
+  <div class="container">
+    <div class="well">
+      <div class="row">
+        <div class="col-md-4">
+              <h3 class="text-center">
+                Follow us
+              </h3>
+              <div class="text-center">
+                <img src="https://s3.amazonaws.com/media.jetstrap.com/fJM1omPHSbK0PgDxEeJO_twitter-bird-blue-on-white.png"
+                width="100">
+              </div>
+              <div>
+                <br>
+              </div>
+        </div>
+        <div class="col-md-4">
+              <h3 class="text-center">
+                Like Us
+              </h3>
+              <p class="text-center">
+                <img src="https://s3.amazonaws.com/media.jetstrap.com/AFkDik7IS6eaUowuxwtS_FB-f-Logo__blue_512.png"
+                style="line-height: 1.428571429;" width="100">
+                <br>
+              </p>
+        </div>
+        <div class="col-md-4">
+              <h3 class="text-center">
+                Contact Us
+              </h3>
+              <p class="text-center">
+                <a href="mailto:ucb@provisionindia.org">ucb@provisionindia.org</a>
+              </p>
+              <p class="text-center">
+              +91 98455 83242
+              <br />
+              080-23339339
+              </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="footer">
+  <div class="row">
+    <div class="span6">
+    <p class="muted credit">
+     <small>&copy UCB 2013</small>
+    </p>
+    </div>
+  </div>
+</template>
+
+
+<template name="about">
+  {{#if showAbout}}
+  <div class="container">
+    <div class="starter-template">
+      <h1>
+          About
+      </h1>
+      <p class="lead">
+          United Charities Bazaar is a Annual Bazaar of Charities and N.G.O's coming together for a common cause!
+      </p>
+
+
+The bazaar provides a platform for Charities from across India and gives them the opportunity to propagate their causes through networking. They are also provided a space to sell their products and services to the common man. This unique bazaar is the largest of its kind in the country and growing!!
+
+The bazaar includes everything from handicrafts and table linens, home-made pickles and jams, to old books and records. 
+    </div>
+  </div>
+  {{/if}}
+</template>
+
+<template name="history">
+  {{#if showHistory}}
+  <div class="container">
+    <div class="starter-template">
+      <h1>
+        History
+      </h1>
+      <p class="lead">
+        A chat over a hot cup of coffee, UCB was an idea that took form over 30 years ago by a group of women with a similar vision and goal. 
+      </p>
+      <p>
+        They called themselves the International Women's Group and came together to provide a space for Charities and N.G.O's to raise funds at a Bazaar.
+      </p>
+      <p>
+        UCB was commonly known as the 'Bowring Sale' in its early early years since it was hosted at the Bowring Club in Bangalore.
+      </p>
+      <p>
+        After having run the bazaar for decades, the International Women's Group handed it over to proVISION INDIA, a Bangalore based N.G.O and a regular participant at the bazaar.
+      </p>
+      <p>
+        The Bazaar has been active for the last forty plus years and their aims run deeper than just providing money for the needy. “We subscribe to the adage that teaching a man to fish is the only way to ensure that he never goes hungry,” says Paul C. Dass, Director of proVISION INDIA, “The deprived have to be taught how to fend for themselves and we endeavour to facilitate this process.”
+      </p>
+    </div>
+  </div>
+  {{/if}}
+</template>
+
+<template name="press">
+<h1>
+        In the news !
+      </h1>
+      <p class="lead">
+      We've been in the news many times ..
+      </p>
+"The event provides an opportunity for charities from across India to raise funds"
+-The Hindu
+
+"This bazaar brings together not-for-profit groups, big and small, from all over south India, irrespective of caste or creed"
+                                  -MidDay
+
+"The event provides a perfect opportunity to find great Christmas and New Year gifts for the loved ones as an array of goods will be on offer here. NGOs from far and wide will arrive in the Garden City to participate in fundraising"
+-Deccan Herald Metro Life
+
+"A 30-year-old tradition, the Charities Bazaar allows NGOs and individuals to set up stalls whose profits are used for charity"
+-Deccan Herald
+
+"Every year UCB allows Charities and N.G.O's to set up stalls and fund raise. The profits are used entirely to provide for those in need"-Burrp! (www.burrp.com)
+</template>
+
+<template name="volunteer">
+  {{#if showVol}}
+    <div class="container">
+    <h1>
+      Get Involved !
+    </h1>
+    <p class="lead">
+      @ UCB there are several ways in which you can get involved... 
+    </p>
+    <p>
+
+    Identify one of the categories below and fill out our contact form in the 'Contact Us' page and we'll get in touch with you!
+
+    1. Volunteer @ a UCB event
+                                     2. Sponsor a Charity/N.G.O stall
+                                     3. Advertise @ our event
+                                     4. Make a one time donation
+                                     5. Corporate's get involved through our C.S.R projects
+    </p>
+  </div>
+  {{/if}}
+</template>
+
+<template name="members">
+Al Ameen Womens Wing  
+All India Anglo Indian Association  
+Andrews Rehab Trust 
+Anjuman - e - Sogra   
+Asha Deep 
+Asha Nikethan 
+Association for the Mentally Challenged 
+Bazm -e- Niswan 
+Blessings Foundation  
+C.S.I Lace Industry, Nagercoil  
+C.U.P.A 
+Catholic Womens League  
+Cheshire Home 
+CSI Women's fellowship (Crafts & Literacy center) 
+DHRITI  
+Divine Mercy Social Welfare Charitable Trust  
+Divya Downs Development Trust 
+Divya Shanti  
+Diya Foundation 
+E.M.P.A.C 
+Fr. Mullers Rehab Center, Mangalore 
+Friend In Need Society  
+Friends of Camphill 
+Friends of NIMHANS  
+Guild of Service  
+H.A.L Families Ladies Welfare 
+I.T.C Ladies Welfare Association   
+Imdad - e -Nisa Trust 
+Jain Ladies Association 
+Kadesh Childrens Home 
+Karigiri Rehab Unit 
+Karuna Animal Welfare 
+Karuna Niketan  
+Mahilar Aran Trust  
+Maria Seva Sanga  
+Mithra Jyothi    
+Navodaya Trust  
+New Beginnings, Chitoor   
+New Hope Trust  
+New Horizon 
+Oasis India 
+People With Disabilities (A.P.D)
+Power Ministries  
+Providence Franciscan Sisters   
+proVISION INDIA 
+SEARCH ministry Charitable Trust  
+Seva Kendra 
+Shishu Mandir 
+Snehajyothi Society of Compassion 
+Sumanahalli 
+St. Jude's Charities  
+St.Philomena's Hospital 
+Sunanda Creations 
+Suthrdhar
+The Fishermen Trust
+The Wonders 
+We Care 
+Women of Destiny (First A..G Church)  
+Women's Christian Society 
+Women's Industrial School, Chitoor  
+Yuvalok Foundation  
+Y.W.C.A Bangalore City  
+</template>
+
+<template name="alerts_display">
+ <div id="alerts" class="modal fade in" style="display: none; ">
+  {{> modal}}
+ </div>
+</template>
+
+
+<template name="modal">
+
+ <div class="modal-header">
+	<h4> Alerts for {{app_name}}</h4>
+ </div>
+
+ <div class="modal-body">
+   <div id="alertdetails">
+       <table class="table table-striped table-condensed">
+	<thead>
+	<tr class="span11">
+	 <th class="span2"><small>DateTime</small></th>
+	 <th class="span2"><small>Incident</small></th>
+   <th class="span1"></th>
+	 <th class="span6"><small>Alert Text</small></th>
+	</tr>
+	</thead>
+	<tbody>
+	{{#if alerts}}
+		{{#each alerts}}	
+       <tr class="span11" >
+			<td class="span2" style="line-height: 15px; ">
+				<small>{{formatDstamp dstamp}}</small>
+			</td>
+			<td class="span2" style="line-height: 15px; ">
+        {{#if ticketnumber}}
+				 <small>{{ticketnumber}}</small>
+        {{/if}}
+			</td>
+      <td class="span1" style="line-height: 15px; ">
+        <a href="#" id="a_details" class="a_details" rel="popover" data-content="{{{formatPopover this}}}">
+        <i class="icon-list"></i>
+        </a>
+      </td>
+			<td class="span6" style="line-height: 15px; ">
+				<small>{{formatMsgtext text}}</small>
+			</td>
+		   </tr>
+		{{/each}}
+	{{else}}
+        	{{app_name}} : Bahh ! No Alerts !
+	{{/if}}
+	</tbody>
+       </table>
+   </div>
+ </div>
+
+ <div class="modal-footer">
+ <a href="#" id="closebtn" class="btn btn-inverse" data-dismiss="modal"><i class="icon-white icon-remove"></i> Close</a>
+ </div>
+
+</template>
+
+<template name="orgs_table">
+</template>

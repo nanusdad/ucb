@@ -1,9 +1,10 @@
 var Router = Backbone.Router.extend({
   routes: {
     "": "main",
+    "about": "about",
     "history": "history",
     "volunteer": "volunteer",
-    "about": "about"
+    "orgs_table": "orgs_table"
   },
   main: function() {
     Session.set('currentPage', 'homePage');
@@ -23,6 +24,11 @@ var Router = Backbone.Router.extend({
     //Volunteer page
     Session.set('currentPage', 'volunteer');
     this.navigate('volunteer');
+  },
+  orgs_table: function() {
+    //Members page
+    Session.set('currentPage', 'orgs_table');
+    this.navigate('orgs_table');
   }
 });
 

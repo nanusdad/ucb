@@ -10,6 +10,10 @@ Template.orgs_table.orgs = function() {
 	});
 };
 
+Template.orgs_table.showTable = function() {
+	return Session.get("currentPage") == 'orgs_table';
+}
+
 Template.about.showAbout = function() {
 	return Session.get("currentPage") == 'about';
 }
@@ -24,6 +28,12 @@ Template.history.showHistory = function() {
 
 Template.volunteer.showVol = function() {
 	return Session.get("currentPage") == 'volunteer';
+}
+
+Template.slider.rendered = function() {
+	$(document).ready(function() {
+		$(".carousel").carousel();
+	});
 }
 
 Template.modal.helpers({

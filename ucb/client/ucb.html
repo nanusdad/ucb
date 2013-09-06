@@ -7,12 +7,11 @@
 
 <body>
     {{> navi}}
-    <div class="row">
       {{> main}}
       {{> about}}
       {{> history}}
       {{> volunteer}}
-    </div>
+      {{> orgs_table}}
 
     <div id="footer">
       <div class="container">
@@ -23,26 +22,18 @@
 
 
 <template name="navi">
+  <div id="navi" class="container">
   <div class="navbar navbar-fixed-top navbar-inverse" id="navbar">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"></a>
-          <a class="navbar-brand" href="#" style="line-height: 1.428571429; display: inline !important;"><div style="display: inline !important;"></div></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+    <div class="container">
+      <div class="navbar-collapse collapse span6">
+        <ul class="nav navbar-nav">
             <li class="active">
               <a href="/">Home</a>
             </li>
             <li>
               <a id="nav_show_about" href="/about">About</a>
             </li>
-            <li class="dropdown open">
+            <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">More&nbsp;<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>
@@ -53,6 +44,9 @@
                 </li>
                 <li>
                   <a href="#">Gallery</a>
+                </li>
+                <li>
+                  <a href="/orgs_table">Member Charities</a>
                 </li>
                 <li class="divider">
                 </li>
@@ -67,25 +61,25 @@
                 </li>
               </ul>
             </li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-            </div>
-            <div class="form-group">
-            </div>
-          </form>
-        </div>
+        </ul>
         <!--/.navbar-collapse -->
       </div>
+      <div class="navbar navbar-nav navbar-right">
+          <a class="navbar-brand" href="/">United Charities Bazaar</a>
+      </div>
     </div>
+  </div>
+  </div>
 </template>
 
 <template name="main">
   {{#if showMain}}
-    {{> jumbo}}
+  <div class="start-template">
+    {{> slider}}
     {{> highlights}}
     <hr>
     {{> social}}
+  </div>
   {{/if}}
 </template>
 
@@ -103,8 +97,64 @@
   </div>
 </template>
 
+<template name="slider">
+  <div id="slider" class="container">
+    <div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
+      <ol class="carousel-indicators">
+        <li data-target="#this-carousel-id" data-slide-to="0" class="active"></li>
+        <li data-target="#this-carousel-id" data-slide-to="1"></li>
+        <li data-target="#this-carousel-id" data-slide-to="2"></li>
+        <li data-target="#this-carousel-id" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active"><!-- class of active since it's the first item -->
+          <img src="juice.jpg" alt="" />
+          <span class="carousel-caption">
+            <h1>United Charities Bazaar</h1>
+            <p>
+              <i>Coming to together to promote various charities under one roof !</i>
+            </p>
+            <br />
+            <a class="btn btn-lg btn-success" href="/about">Learn more »</a>
+          </span>
+        </div>
+        <div class="item">
+          <img src="cloth.jpg" alt="" />
+          <div class="carousel-caption">
+            <blockquote>
+              "A 30-year-old tradition, the Charities Bazaar allows NGOs and individuals to set up stalls whose profits are used for charity"
+              <small>Deccan Herald</small>
+            </blockquote>          
+          </div>
+        </div>
+        <div class="item">
+          <img src="with_puppy.jpg" alt="" />
+          <div class="carousel-caption">
+            <p>
+              <a class="btn btn-lg btn-success" href="/events">Next event in Dec ! »</a>
+            </p>  
+          </div>
+        </div>
+        <div class="item">
+          <img src="hanging_orns.jpg" alt="" />
+          <div class="carousel-caption">
+            <blockquote>
+              "This bazaar brings together not-for-profit groups, big and small, from all over south India, irrespective of caste or creed"
+              <small>MidDay</small>
+            </blockquote>
+          </div>
+        </div>
+      </div><!-- /.carousel-inner -->
+      <!--  Next and Previous controls below
+            href values must reference the id for this carousel -->
+        <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+  </div>
+</template>
+
 <template name="highlights">
-  <div class="container">
+  <div id="highlights" class="container">
     <div class="row">
       <div class="col-md-4">
         <h2>
@@ -147,54 +197,62 @@
 </template>
 
 <template name="social">
-  <div class="container">
+  <div id="social" class="container">
     <div class="well">
       <div class="row">
         <div class="col-md-4">
-              <h3 class="text-center">
-                Follow us
-              </h3>
-              <div class="text-center">
-                <img src="https://s3.amazonaws.com/media.jetstrap.com/fJM1omPHSbK0PgDxEeJO_twitter-bird-blue-on-white.png"
-                width="100">
-              </div>
-              <div>
-                <br>
-              </div>
+          <h3 class="text-center">
+            Follow us
+          </h3>
+          <div class="text-center">
+            <a href="http://www.twitter.com/ucbblr">
+              <img src="twitter.png" width="100">
+            </a>
+          </div>
         </div>
         <div class="col-md-4">
-              <h3 class="text-center">
-                Like Us
-              </h3>
-              <p class="text-center">
-                <img src="https://s3.amazonaws.com/media.jetstrap.com/AFkDik7IS6eaUowuxwtS_FB-f-Logo__blue_512.png"
-                style="line-height: 1.428571429;" width="100">
-                <br>
-              </p>
+          <h3 class="text-center">
+            Like Us
+          </h3>
+          <p class="text-center">
+            <a href="https://www.facebook.com/unitedcharitiesbazaar">
+              <img src="fb.png" width="100">
+            </a>
+          </p>
         </div>
         <div class="col-md-4">
-              <h3 class="text-center">
-                Contact Us
-              </h3>
-              <p class="text-center">
-                <a href="mailto:ucb@provisionindia.org">ucb@provisionindia.org</a>
-              </p>
-              <p class="text-center">
-              +91 98455 83242
-              <br />
-              080-23339339
-              </p>
+          <h3 class="text-center">
+            Contact Us
+          </h3>
+          <p class="text-center">
+            <a href="mailto:ucb@provisionindia.org">ucb@provisionindia.org</a>
+          </p>
+          <p class="text-center">
+            +91 98455 83242
+          </p>
+          <p class="text-center">
+            080-23339339
+          </p>
         </div>
       </div>
     </div>
   </div>
 </template>
 
+<template name="gallery">
+  <div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+  <div class='lightbox-content'>
+    <img src="juice.jpg">
+    <div class="lightbox-caption"><p>Your caption here</p></div>
+  </div>
+  </div>
+</template>
+
 <template name="footer">
-  <div class="row">
-    <div class="span6">
+  <div class="container">
+    <div class="pull-right">
     <p class="muted credit">
-     <small>&copy UCB 2013</small>
+     <small>&copy United Charities Bazaar 2013 / <a href="mailto:arun@zechariah.net">ajz design</a></small>
     </p>
     </div>
   </div>
@@ -272,90 +330,69 @@ The bazaar includes everything from handicrafts and table linens, home-made pick
 
 <template name="volunteer">
   {{#if showVol}}
-    <div class="container">
-    <h1>
-      Get Involved !
-    </h1>
-    <p class="lead">
-      @ UCB there are several ways in which you can get involved... 
-    </p>
-    <p>
-
-    Identify one of the categories below and fill out our contact form in the 'Contact Us' page and we'll get in touch with you!
-
-    1. Volunteer @ a UCB event
-                                     2. Sponsor a Charity/N.G.O stall
-                                     3. Advertise @ our event
-                                     4. Make a one time donation
-                                     5. Corporate's get involved through our C.S.R projects
-    </p>
-  </div>
+    <div id="volunteer" class="container">
+      <div class="starter-template pagination-center">
+        <div class="row featurette pagination-center">
+          <div class="col-md-7">
+            <h2 class="featurette-heading"> 
+              Get Involved !
+            </h2>
+            <p class="lead">
+              @ UCB there are several ways in which you can get involved... 
+            </p>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                Help out
+              </div>
+              <div class="panel-body">
+                <p>
+                Identify one of the categories below and fill out our contact form in the 'Contact Us' page and we'll get in touch with you!
+                </p>
+              </div>
+              <ol class="list-group">    
+                <li class="list-group-item">Volunteer @ an UCB event
+                <li class="list-group-item">Sponsor a Charity/NGO stall
+                <li class="list-group-item">Advertise @ our event
+                <li class="list-group-item">Make a one time donation
+                <li class="list-group-item">Corporates get involved through our C.S.R projects
+              </ol>
+            </div>
+          </div>
+          <div class="col-md-5 well">
+            <div class="text-center">
+            <img class="thumbnail img-responsive" src="vols.jpg">
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
   {{/if}}
 </template>
 
-<template name="members">
-Al Ameen Womens Wing  
-All India Anglo Indian Association  
-Andrews Rehab Trust 
-Anjuman - e - Sogra   
-Asha Deep 
-Asha Nikethan 
-Association for the Mentally Challenged 
-Bazm -e- Niswan 
-Blessings Foundation  
-C.S.I Lace Industry, Nagercoil  
-C.U.P.A 
-Catholic Womens League  
-Cheshire Home 
-CSI Women's fellowship (Crafts & Literacy center) 
-DHRITI  
-Divine Mercy Social Welfare Charitable Trust  
-Divya Downs Development Trust 
-Divya Shanti  
-Diya Foundation 
-E.M.P.A.C 
-Fr. Mullers Rehab Center, Mangalore 
-Friend In Need Society  
-Friends of Camphill 
-Friends of NIMHANS  
-Guild of Service  
-H.A.L Families Ladies Welfare 
-I.T.C Ladies Welfare Association   
-Imdad - e -Nisa Trust 
-Jain Ladies Association 
-Kadesh Childrens Home 
-Karigiri Rehab Unit 
-Karuna Animal Welfare 
-Karuna Niketan  
-Mahilar Aran Trust  
-Maria Seva Sanga  
-Mithra Jyothi    
-Navodaya Trust  
-New Beginnings, Chitoor   
-New Hope Trust  
-New Horizon 
-Oasis India 
-People With Disabilities (A.P.D)
-Power Ministries  
-Providence Franciscan Sisters   
-proVISION INDIA 
-SEARCH ministry Charitable Trust  
-Seva Kendra 
-Shishu Mandir 
-Snehajyothi Society of Compassion 
-Sumanahalli 
-St. Jude's Charities  
-St.Philomena's Hospital 
-Sunanda Creations 
-Suthrdhar
-The Fishermen Trust
-The Wonders 
-We Care 
-Women of Destiny (First A..G Church)  
-Women's Christian Society 
-Women's Industrial School, Chitoor  
-Yuvalok Foundation  
-Y.W.C.A Bangalore City  
+<template name="orgs_table">
+  {{#if showTable}} 
+    <div class="container">
+      <div class="starter-template">
+        {{#if orgs}}
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2>Member Charities</h2>
+            </div>
+            <div class="panel-body">
+              <p> 
+                If you are a participant and not on the list - please let us know.
+              </p>
+            </div>
+            <ul class="list-group">
+            {{#each orgs}}
+            <li class="list-group-item">{{name}}</li>
+            {{/each}}
+            </ul>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
 </template>
 
 <template name="alerts_display">
@@ -418,5 +455,3 @@ Y.W.C.A Bangalore City
 
 </template>
 
-<template name="orgs_table">
-</template>
